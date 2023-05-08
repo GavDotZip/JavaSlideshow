@@ -1,4 +1,5 @@
 import java.awt.Container;
+import java.awt.Image;
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -64,8 +65,19 @@ public class slides extends JFrame {
                 
             });
 
-            
+
         );
+    }
+
+    public void setImageSize(int i) {
+        Image newImage = (new ImageIcon(list[i])).getImage().getScaledInstance(400, 250, Image.SCALE_SMOOTH);
+        ImageIcon newIcon = new ImageIcon(newImage);
+        label.setIcon(newIcon);
+    }
+
+    public static void main(String args[]) {
+        slides slideshow = new slides();
+        slideshow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }
