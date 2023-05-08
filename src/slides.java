@@ -39,11 +39,32 @@ public class slides extends JFrame {
             new ItemListener() {
                 public void itemStateChanged(ItemEvent event) {
                     if(event.getStateChange() == ItemEvent.SELECTED) {
-                        
+                        if(slideshowComboBox.getSelectedIndex() == 0) {
+                            list = emptyList;
+                            slideshow = 0;
+                            container.setBackground(colors[0]);
+                        }
+                        else if(slideshow.getSelectedIndex() == 1) {
+                            list = kantoList;
+                            slideshow = 1;
+                            container.setBackground(colors[background1]);
+                        }
+                        else if(slideshow.getSelectedIndex() == 2) {
+                            list = johtoList;
+                            slideshow = 2;
+                            container.setBackground(colors[background2]);
+                        }
+                        else if(slideshow.getSelectedIndex() == 3) {
+                            list = hoennList;
+                            slideshow = 3;
+                            container.setBackground(colors[background3]);
+                        }
                     }
                 }
                 
-            };
+            });
+
+            
         );
     }
 
