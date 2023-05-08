@@ -32,6 +32,19 @@ public class slides extends JFrame {
             buttons[i].setPreferredSize(getPreferredSize(new Dimension(240, 30)));
             buttonPanel.add(buttons[i]);
         }
+
+        slideshowComboBox.setMaximumRowCount(4);
+        slideshowComboBox = new JComboBox<>(slideshows);
+        slideshowComboBox.addItemListener(
+            new ItemListener() {
+                public void itemStateChanged(ItemEvent event) {
+                    if(event.getStateChange() == ItemEvent.SELECTED) {
+                        
+                    }
+                }
+                
+            };
+        );
     }
 
 }
