@@ -19,6 +19,17 @@ public class slides extends JFrame {
     private String[] list = new String[3];
     private String[] emptyList = new String[3];
 
+
+    public void setImageSize(int i) {
+        Image newImage = (new ImageIcon(list[i])).getImage().getScaledInstance(400, 250, Image.SCALE_SMOOTH);
+        ImageIcon newIcon = new ImageIcon(newImage);
+        label.setIcon(newIcon);
+    }
+
+    public static void main(String args[]) {
+        slides slideshow = new slides();
+        slideshow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
     //constructor for class
     public slides() {
         super("Choose your region");
@@ -67,17 +78,6 @@ public class slides extends JFrame {
 
 
         );
-    }
-
-    public void setImageSize(int i) {
-        Image newImage = (new ImageIcon(list[i])).getImage().getScaledInstance(400, 250, Image.SCALE_SMOOTH);
-        ImageIcon newIcon = new ImageIcon(newImage);
-        label.setIcon(newIcon);
-    }
-
-    public static void main(String args[]) {
-        slides slideshow = new slides();
-        slideshow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }
